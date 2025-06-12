@@ -1,0 +1,13 @@
+{
+    "layers": {
+        "humanoid": [
+            {
+                "dyeable": {
+                    "color_when_undyed": [1, 1, 1]
+                },
+                "texture": "",
+                "use_player_texture": false
+            }
+        ]
+    }
+}
