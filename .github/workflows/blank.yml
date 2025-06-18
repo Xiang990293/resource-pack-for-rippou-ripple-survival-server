@@ -13,12 +13,12 @@ jobs:
 
     - name: Create zip without root folder
       run: |
-        REPO_NAME=$(basename $GITHUB_REPOSITORY)
-        TAG_NAME=${GITHUB_REF#refs/tags/}
-        git archive --format zip --prefix="" -o ${REPO_NAME}-${TAG_NAME}.zip HEAD
+        git archive --format zip --prefix="" -o server_resource_pack.zip HEAD
 
     - name: Upload Release Asset
-      uses: ncipollo/release-action@v1
+      uses: softprops/action-gh-release@v2
       with:
-        artifacts: "${{ github.repository }}-${{ github.ref_name }}.zip"
-        token: ${{ secrets.GITHUB_TOKEN }}
+        # 確保 'files' 參數指向你固定的 ZIP 檔名
+        files: "server_resource_pack.zip" # 與上面 'git archive' 的輸出檔名一致
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
