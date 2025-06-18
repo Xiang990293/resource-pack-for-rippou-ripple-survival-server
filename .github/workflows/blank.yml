@@ -1,9 +1,6 @@
 name: Create Release Zip
 
-on:
-  push:
-    tags:
-      - 'v*'  # 當推送標籤時觸發
+on: [push]
 
 jobs:
   build:
