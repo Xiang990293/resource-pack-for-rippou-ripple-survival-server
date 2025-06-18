@@ -1,0 +1,24 @@
+name: Create Release Zip
+
+on:
+  push:
+    tags:
+      - 'v*'  # 當推送標籤時觸發
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Create zip without root folder
+      run: |
+        REPO_NAME=$(basename $GITHUB_REPOSITORY)
+        TAG_NAME=${GITHUB_REF#refs/tags/}
+        git archive --format zip --prefix="" -o ${REPO_NAME}-${TAG_NAME}.zip HEAD
+
+    - name: Upload Release Asset
+      uses: ncipollo/release-action@v1
+      with:
+        artifacts: "${{ github.repository }}-${{ github.ref_name }}.zip"
+        token: ${{ secrets.GITHUB_TOKEN }}
