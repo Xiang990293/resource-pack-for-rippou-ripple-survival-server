@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        fetch-depth: 0
 
     - name: pull latest and remove old file from repo
       run: |
@@ -28,5 +31,3 @@ jobs:
         git add -A
         git commit -m "pack update"
         git push --force
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
