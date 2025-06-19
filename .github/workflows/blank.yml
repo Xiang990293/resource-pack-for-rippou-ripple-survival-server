@@ -1,6 +1,9 @@
 name: Create Release Zip
 
-on: [push]
+on:
+  push:
+    paths-ignore:
+      - 'release.zip'
 
 jobs:
   build:
@@ -8,14 +11,22 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Create zip without root folder
+    - name: pull latest and remove old file from repo
       run: |
-        git archive --format zip --prefix="" -o server_resource_pack.zip HEAD
-
-    - name: Upload Release Asset
-      uses: softprops/action-gh-release@v2
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git config pull.rebase false
+        git pull
+        rm -f release.zip
+    - name: Archive Release
+      uses: thedoctor0/zip-release@master
       with:
-        # 確保 'files' 參數指向你固定的 ZIP 檔名
-        files: "server_resource_pack.zip" # 與上面 'git archive' 的輸出檔名一致
+        filename: 'release.zip'
+        exclusions: '*.git* LICENSE README.md'
+    - name: push changes to remote
+      run: |
+        git add -A
+        git commit -m "pack update"
+        git push --force
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
