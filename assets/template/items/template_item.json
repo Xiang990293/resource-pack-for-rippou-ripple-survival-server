@@ -2,6 +2,8 @@
     "hand_animation_on_swap": true,
     "oversized_in_gui": false,
     "model": {
-        "type": ""
+        "type": "minecraft:model",
+        "model": "minecraft:item/generic"
+
     } 
 }
