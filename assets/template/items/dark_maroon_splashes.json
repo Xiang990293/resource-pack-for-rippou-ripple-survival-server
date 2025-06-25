@@ -1,6 +1,6 @@
 {
     "model": {
         "type": "minecraft:model",
-        "model": "minecraft:item/trident"
+        "model": "template:item/dark_maroon_splashes"
     }
 }
