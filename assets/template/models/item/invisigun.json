@@ -2,6 +2,7 @@
 	"format_version": "1.21.6",
 	"credit": "Made with Blockbench",
 	"textures": {
+		"layer0": "template:item/invisigun",
 		"0": "template:item/invisigun",
 		"particle": "template:item/invisigun"
 	},
@@ -124,5 +125,35 @@
 				"down": {"uv": [0, 0, 1.4, 0.8], "texture": "#missing"}
 			}
 		}
-	]
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0, 3, -2]
+		},
+		"thirdperson_lefthand": {
+			"translation": [0, 3, -2]
+		},
+		"firstperson_righthand": {
+			"translation": [0, 6.5, 0]
+		},
+		"firstperson_lefthand": {
+			"translation": [0, 6.5, 0]
+		},
+		"ground": {
+			"rotation": [-90, 0, 90],
+			"translation": [-2, -1.25, 1],
+			"scale": [0.67, 0.67, 0.67]
+		},
+		"gui": {
+			"rotation": [0, -90, 0],
+			"translation": [0.75, 2.75, 0]
+		},
+		"head": {
+			"translation": [0, 13, -0.5]
+		},
+		"fixed": {
+			"rotation": [0, 90, 0],
+			"translation": [-0.5, 3, 0]
+		}
+	}
 }
