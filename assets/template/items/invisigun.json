@@ -3,7 +3,7 @@
     "oversized_in_gui": false,
     "model": {
         "type": "minecraft:model",
-        "model": "minecraft:item/invisigun"
+        "model": "template:item/invisigun"
 
     } 
 }
