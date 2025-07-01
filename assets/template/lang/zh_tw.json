@@ -1,3 +1,7 @@
 {
-    "reload.message.resource_pack": "成功載入伺服器專用資源包"
+    "reload.message.resource_pack": "成功載入伺服器專用資源包",
+    "mission.reward_type.no_reward": "無獎勵",
+    "mission.reward_type.xp": "經驗值",
+    "mission.reward_type.xp_level": "經驗等級",
+    "mission.reward_type.item": "物品"
 }
