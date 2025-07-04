@@ -3,5 +3,9 @@
     "mission.reward_type.no_reward": "無獎勵",
     "mission.reward_type.xp": "經驗值",
     "mission.reward_type.xp_level": "經驗等級",
-    "mission.reward_type.item": "物品"
+    "mission.reward_type.item": "物品",
+    "mission.reward_context.no_reward": "無獎勵",
+    "mission.reward_context.item": "%s",
+    "mission.reward_context.xp": "%s 經驗值",
+    "mission.reward_context.xp_level": "%s 經驗等級"
 }
